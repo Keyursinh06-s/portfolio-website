@@ -67,6 +67,13 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
 }
 
 .bar {
@@ -75,28 +82,21 @@ body {
     background-color: #333;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
 }
 
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 0 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+/* Hamburger Animation */
+.nav-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
 }
 
+.nav-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
